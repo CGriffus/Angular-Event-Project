@@ -14,10 +14,8 @@ export class SearchCriteriaComponent implements OnInit {
 
   ngOnInit() {}
 
-
   getEvents(form: NgForm): void {
     this.eventsService.getEventData(form).subscribe(response => {
-
       this.eventData = response._embedded.events;
       console.log(this.eventData);
     });
