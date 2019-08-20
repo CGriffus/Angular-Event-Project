@@ -20,4 +20,12 @@ export class SearchCriteriaComponent implements OnInit {
       console.log(response);
     });
   }
+
+  goToEvents() {
+    this.eventsService.viewEvents();
+  }
+
+  goToFavs() {
+    this.eventsService.viewFavorites();
+  }
 }
