@@ -1,4 +1,6 @@
 <div>
+
+  <h3>Search Events</h3>
   <form #form="ngForm" (ngSubmit)="getEvents(form.value)">
     <div>
       <label for="keyword">Keyword</label>
@@ -16,6 +18,8 @@
       <label for="endDate">End Date</label>
       <input id="endDate" type="text" name="endDate" ngModel />
     </div>
-    <button>Search</button>
+    <button (click)="goToEvents()">Search</button>
   </form>
+
+  <button (click)="goToFavs()">View Favorites</button>
 </div>

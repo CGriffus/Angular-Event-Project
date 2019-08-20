@@ -1,6 +1,10 @@
 <p>event-list works!</p>
 
+
 <h1>List of Events</h1>
 <div *ngFor="let event of eventData">
   <p>{{ event.name }}</p>
 </div>
+
+<button (click)="goToDetails()">Details</button>
+

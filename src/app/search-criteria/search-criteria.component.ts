@@ -19,4 +19,12 @@ export class SearchCriteriaComponent implements OnInit {
       console.log(this.eventData);
     });
   }
+
+  goToEvents() {
+    this.eventsService.viewEvents();
+  }
+
+  goToFavs() {
+    this.eventsService.viewFavorites();
+  }
 }
