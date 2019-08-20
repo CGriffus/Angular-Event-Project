@@ -1,3 +1,4 @@
+
 <div class="searchAside">
   <h3>Search Events</h3>
   <form #form="ngForm" (ngSubmit)="getEvents(form)">
@@ -38,7 +39,12 @@
     />
 
     <button id="searchBtn" (click)="goToEvents()">Search</button>
+
   </form>
 
   <button id="favsBtn" (click)="goToFavs()">View Favorites</button>
+</div>
+
+<div *ngFor="let event of eventData">
+  <p>{{ event.name }}</p>
 </div>
