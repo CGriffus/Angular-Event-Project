@@ -1,0 +1,43 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchAside {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-right: 20px;
+  height: 100%;
+}
+
+label {
+  position: absolute;
+  left: -999999px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+#searchBtn {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: none;
+  background: red;
+  font-weight: bold;
+}
+
+#favsBtn {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: none;
+  background: yellow;
+  font-weight: bold;
+}

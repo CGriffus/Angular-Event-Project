@@ -9,6 +9,7 @@ import { NgForm } from "@angular/forms";
 })
 export class SearchCriteriaComponent implements OnInit {
   eventData: any;
+
   constructor(private eventsService: EventsService) {}
 
   ngOnInit() {}
