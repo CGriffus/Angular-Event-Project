@@ -1,6 +1,7 @@
 <div>
+
   <h3>Search Events</h3>
-  <form #form="ngForm" (ngSubmit)="getEvents(form)">
+  <form #form="ngForm" (ngSubmit)="getEvents(form.value)">
     <div>
       <label for="keyword">Keyword</label>
       <input id="keyword" type="text" name="keyword" ngModel />
