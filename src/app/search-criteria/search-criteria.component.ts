@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { EventsService } from "../services/events.service";
+import { NgForm } from "@angular/forms";
 
 @Component({
   selector: "app-search-criteria",
