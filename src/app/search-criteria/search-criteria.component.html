@@ -3,23 +3,51 @@
   <h3>Search Events</h3>
   <form #form="ngForm" (ngSubmit)="getEvents(form.value)">
     <div>
-      <label for="keyword">Keyword</label>
-      <input id="keyword" type="text" name="keyword" ngModel />
+      <label for="keyword">Keyword:</label>
+      <input
+        id="keyword"
+        type="text"
+        name="keyword"
+        ngModel
+        placeholder="Tigers"
+      />
     </div>
     <div>
-      <label for="location">Zip Code</label>
-      <input id="location" type="text" name="location" ngModel />
+      <label for="location">City:</label>
+      <input
+        id="location"
+        type="text"
+        name="location"
+        ngModel
+        placeholder="Detroit"
+      />
     </div>
     <div>
-      <label for="startDate">Start Date</label>
-      <input id="startDate" type="text" name="startDate" ngModel />
+      <label for="startDate">Start Date:</label>
+      <input
+        id="startDate"
+        type="text"
+        name="startDate"
+        ngModel
+        placeholder="YYYY-MM-DD"
+      />
     </div>
     <div>
-      <label for="endDate">End Date</label>
-      <input id="endDate" type="text" name="endDate" ngModel />
+      <label for="endDate">End Date:</label>
+      <input
+        id="endDate"
+        type="text"
+        name="endDate"
+        ngModel
+        placeholder="YYYY-MM-DD"
+      />
     </div>
     <button (click)="goToEvents()">Search</button>
   </form>
 
   <button (click)="goToFavs()">View Favorites</button>
+</div>
+
+<div *ngFor="let event of eventData">
+  <p>{{ event.name }}</p>
 </div>
