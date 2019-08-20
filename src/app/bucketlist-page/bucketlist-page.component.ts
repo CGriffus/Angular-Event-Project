@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { EventsService } from "../services/events.service";
 
 @Component({
-  selector: 'app-bucketlist-page',
-  templateUrl: './bucketlist-page.component.html',
-  styleUrls: ['./bucketlist-page.component.css']
+  selector: "app-bucketlist-page",
+  templateUrl: "./bucketlist-page.component.html",
+  styleUrls: ["./bucketlist-page.component.css"]
 })
 export class BucketlistPageComponent implements OnInit {
+  constructor(private eventsService: EventsService) {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  goToEvents() {
+    this.eventsService.viewEvents();
   }
-
 }
