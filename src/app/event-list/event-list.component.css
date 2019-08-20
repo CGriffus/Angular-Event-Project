@@ -1,0 +1,8 @@
+.far {
+  background: yellow;
+  border-radius: 100%;
+}
+
+.event {
+  display: flex;
+}
