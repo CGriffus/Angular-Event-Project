@@ -1,24 +1,34 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
 import { Router } from "@angular/router";
 
 @Injectable({
   providedIn: "root"
 })
 export class EventsService {
+  eventData: any;
   constructor(private http: HttpClient, private router: Router) {}
 
-  getEventData(data: any): Observable<any> {
-    return this.http.get(
-      `https://app.ticketmaster.com/discovery/v2/events.json?keyword=${
-        data.keyword
-      }&city=${data.location}&startDateTime=${
-        data.startDate
-      }T00:00:01Z&endDateTime=${
-        data.endDate
-      }T23:59:59Z&apikey=gkoO7RxqF2XQCgIYel4GffUzArf8WaAG`
-    );
+  getEventData(data: any): void {
+    console.log(data.value);
+    this.http
+      .get(
+        `https://app.ticketmaster.com/discovery/v2/events?apikey=n0LYhyC6gPm4im2QzA9w62NcjY90NAAG&keyword=${
+          data.value.keyword
+        }&radius=10&unit=miles&locale=*&startDateTime=${
+          data.value.startDate
+        }T00:00:01Z&endDateTime=${data.value.endDate}T23:59:59Z&city=${
+          data.value.location
+        }`
+      )
+      .subscribe(response => {
+        this.eventData = response["_embedded"].events;
+        console.log(this.eventData);
+      });
+  }
+
+  getEvents() {
+    return this.eventData;
   }
 
   viewEvents() {
@@ -31,5 +41,9 @@ export class EventsService {
 
   viewDetails() {
     this.router.navigate(["eventDetail"]);
+  }
+
+  viewHome() {
+    this.router.navigate(["home"]);
   }
 }

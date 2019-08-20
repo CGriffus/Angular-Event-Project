@@ -7,11 +7,19 @@ import { EventsService } from "../services/events.service";
   styleUrls: ["./event-list.component.css"]
 })
 export class EventListComponent implements OnInit {
+  eventData: any[];
   constructor(private eventsService: EventsService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.eventData = this.eventsService.getEvents();
+    console.log(this.eventData);
+  }
 
   goToDetails() {
     this.eventsService.viewDetails();
+  }
+
+  goToHome() {
+    this.eventsService.viewHome();
   }
 }
