@@ -7,7 +7,16 @@ import { EventsService } from "../services/events.service";
   styleUrls: ["./search-criteria.component.css"]
 })
 export class SearchCriteriaComponent implements OnInit {
+  eventData: any;
   constructor(private eventsService: EventsService) {}
 
   ngOnInit() {}
+
+  getEvents(form: any): void {
+    console.log(form.value);
+    this.eventsService.getEventData(form.value).subscribe(response => {
+      this.eventData = response.data;
+      console.log(response);
+    });
+  }
 }
