@@ -1,5 +1,7 @@
 <div>
-  <form #form="ngForm" (ngSubmit)="getEvents(form)">
+
+  <h3>Search Events</h3>
+  <form #form="ngForm" (ngSubmit)="getEvents(form.value)">
     <div>
       <label for="keyword">Keyword:</label>
       <input
@@ -40,8 +42,10 @@
         placeholder="YYYY-MM-DD"
       />
     </div>
-    <button>Search</button>
+    <button (click)="goToEvents()">Search</button>
   </form>
+
+  <button (click)="goToFavs()">View Favorites</button>
 </div>
 
 <div *ngFor="let event of eventData">
