@@ -9,23 +9,15 @@ import { NgForm } from "@angular/forms";
 })
 export class SearchCriteriaComponent implements OnInit {
   eventData: any;
-
   constructor(private eventsService: EventsService) {}
 
   ngOnInit() {}
 
-  getEvents(form: NgForm): void {
-    this.eventsService
-      .getEventData(
-        form.value.keyword
-        // form.value.location,
-        // form.value.startDate,
-        // form.value.endDate
-      )
-      .subscribe(response => {
-        this.eventData = response.data;
-        console.log(this.eventData);
-        console.log(form);
-      });
+  getEvents(form: any): void {
+    console.log(form.value);
+    this.eventsService.getEventData(form.value).subscribe(response => {
+      this.eventData = response.data;
+      console.log(response);
+    });
   }
 }

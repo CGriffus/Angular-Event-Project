@@ -1,12 +1,21 @@
 <div>
-  <form #form="ngForm" (submit)="getEvents(form)">
-    <label for="keyword">Keyword</label>
-    <input type="text" name="keyword" ngModel />
-    <!-- <label for="location">Zip Code</label>
-    <input type="text" name="location" ngModel />
-    <label for="startDate">Start Date</label>
-    <input type="text" name="startDate" ngModel />
-    <label for="endDate">End Date</label>
-    <input type="text" name="endDate" ngModel /> -->
+  <form #form="ngForm" (ngSubmit)="getEvents(form)">
+    <div>
+      <label for="keyword">Keyword</label>
+      <input id="keyword" type="text" name="keyword" ngModel />
+    </div>
+    <div>
+      <label for="location">Zip Code</label>
+      <input id="location" type="text" name="location" ngModel />
+    </div>
+    <div>
+      <label for="startDate">Start Date</label>
+      <input id="startDate" type="text" name="startDate" ngModel />
+    </div>
+    <div>
+      <label for="endDate">End Date</label>
+      <input id="endDate" type="text" name="endDate" ngModel />
+    </div>
+    <button>Search</button>
   </form>
 </div>
