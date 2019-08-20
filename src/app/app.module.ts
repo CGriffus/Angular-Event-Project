@@ -11,11 +11,11 @@ import { HttpClientModule } from "@angular/common/http";
 import { HomeComponent } from "./home/home.component";
 
 const appRoutes: Routes = [
+  { path: "home", component: HomeComponent },
   { path: "eventDetail", component: EventDetailComponent },
   { path: "eventList", component: EventListComponent },
   { path: "bucketList", component: BucketlistPageComponent },
-  { path: "search", component: SearchCriteriaComponent },
-  { path: "home", component: HomeComponent }
+  { path: "search", component: SearchCriteriaComponent }
 ];
 
 @NgModule({
