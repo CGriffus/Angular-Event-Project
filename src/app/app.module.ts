@@ -8,13 +8,14 @@ import { EventListComponent } from "./event-list/event-list.component";
 import { BucketlistPageComponent } from "./bucketlist-page/bucketlist-page.component";
 import { EventDetailComponent } from "./event-detail/event-detail.component";
 import { HttpClientModule } from "@angular/common/http";
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from "./home/home.component";
 
 const appRoutes: Routes = [
   { path: "eventDetail", component: EventDetailComponent },
   { path: "eventList", component: EventListComponent },
   { path: "bucketList", component: BucketlistPageComponent },
-  { path: "search", component: SearchCriteriaComponent }
+  { path: "search", component: SearchCriteriaComponent },
+  { path: "home", component: HomeComponent }
 ];
 
 @NgModule({
