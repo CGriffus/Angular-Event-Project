@@ -15,7 +15,8 @@ const appRoutes: Routes = [
   { path: "eventDetail", component: EventDetailComponent },
   { path: "eventList", component: EventListComponent },
   { path: "bucketList", component: BucketlistPageComponent },
-  { path: "search", component: SearchCriteriaComponent }
+  { path: "search", component: SearchCriteriaComponent },
+  { path: "**", redirectTo: "/home", pathMatch: "full" }
 ];
 
 @NgModule({
