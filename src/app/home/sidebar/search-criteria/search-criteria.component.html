@@ -1,6 +1,6 @@
 <div class="searchAside">
   <h2 id="title">Search For Events</h2>
-  <form #form="ngForm" (ngSubmit)="getEvents(form)">
+  <form #form="ngForm" (submit)="getEvents(form)">
     <label for="keyword">Event</label>
     <input
       id="keyword"
@@ -20,25 +20,13 @@
     />
 
     <label for="startDate">Start Date</label>
-    <input
-      id="startDate"
-      type="date"
-      name="startDate"
-      ngModel
-      placeholder="YYYY-MM-DD"
-    />
+    <input id="startDate" type="date" name="startDate" ngModel />
 
     <label for="endDate">End Date</label>
-    <input
-      id="endDate"
-      type="date"
-      name="endDate"
-      ngModel
-      placeholder="YYYY-MM-DD"
-    />
+    <input id="endDate" type="date" name="endDate" ngModel />
 
-    <button id="searchBtn" (click)="goToEvents()">Search</button>
+    <button id="searchBtn">Search</button>
   </form>
 
-  <button id="favsBtn" (click)="goToFavs()">View Favorites</button>
+  <!-- <button id="favsBtn">View Favorites</button> -->
 </div>

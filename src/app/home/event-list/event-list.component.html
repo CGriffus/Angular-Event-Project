@@ -1,6 +1,6 @@
 <div id="eventList">
   <h1>List of Events</h1>
-  <div class="event" *ngFor="let event of eventData">
+  <div class="event" *ngFor="let event of events">
     <p>{{ event.name }}</p>
     <button (click)="goToDetails()">Details</button>
     <div>
@@ -8,5 +8,5 @@
     </div>
   </div>
 
-  <button (click)="goToHome()">Search Again</button>
+  <!-- <button (click)="goToHome()">Search Again</button> -->
 </div>

@@ -3,19 +3,18 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 import { AppComponent } from "./app.component";
-import { SearchCriteriaComponent } from "./search-criteria/search-criteria.component";
-import { EventListComponent } from "./event-list/event-list.component";
+import { SearchCriteriaComponent } from "./home/sidebar/search-criteria/search-criteria.component";
+import { EventListComponent } from "./home/event-list/event-list.component";
 import { BucketlistPageComponent } from "./bucketlist-page/bucketlist-page.component";
 import { EventDetailComponent } from "./event-detail/event-detail.component";
 import { HttpClientModule } from "@angular/common/http";
 import { HomeComponent } from "./home/home.component";
+import { SidebarComponent } from "./home/sidebar/sidebar.component";
 
 const appRoutes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "eventDetail", component: EventDetailComponent },
-  { path: "eventList", component: EventListComponent },
   { path: "bucketList", component: BucketlistPageComponent },
-  { path: "search", component: SearchCriteriaComponent },
   { path: "**", redirectTo: "/home", pathMatch: "full" }
 ];
 
@@ -26,7 +25,8 @@ const appRoutes: Routes = [
     EventListComponent,
     BucketlistPageComponent,
     EventDetailComponent,
-    HomeComponent
+    HomeComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
