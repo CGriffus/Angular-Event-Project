@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { EventsService } from "../../services/events.service";
+import { Component, OnInit, Input } from "@angular/core";
+// import { EventsService } from "../../services/events.service";
 
 @Component({
   selector: "app-event-list",
@@ -7,19 +7,19 @@ import { EventsService } from "../../services/events.service";
   styleUrls: ["./event-list.component.css"]
 })
 export class EventListComponent implements OnInit {
-  eventData: any[] = [];
-  constructor(private eventsService: EventsService) {}
+  @Input() events;
+  constructor() {}
 
   ngOnInit() {
-    this.eventData = this.eventsService.getEvents();
-    console.log(this.eventData);
+    // this.eventData = this.eventsService.getEvents();
+    // console.log(this.eventData);
   }
 
-  goToDetails() {
-    this.eventsService.viewDetails();
-  }
+  // goToDetails() {
+  //   this.eventsService.viewDetails();
+  // }
 
-  goToHome() {
-    this.eventsService.viewHome();
-  }
+  // goToHome() {
+  //   this.eventsService.viewHome();
+  // }
 }

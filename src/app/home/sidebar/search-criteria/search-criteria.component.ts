@@ -1,5 +1,4 @@
-import { Component, OnInit } from "@angular/core";
-import { EventsService } from "../../../services/events.service";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { NgForm } from "@angular/forms";
 
 @Component({
@@ -8,21 +7,17 @@ import { NgForm } from "@angular/forms";
   styleUrls: ["./search-criteria.component.css"]
 })
 export class SearchCriteriaComponent implements OnInit {
-  eventData: any;
+  @Output() getEventsForm = new EventEmitter<any>();
 
-  constructor(private eventsService: EventsService) {}
+  constructor() {}
 
   ngOnInit() {}
 
-  getEvents(form: NgForm): void {
-    this.eventsService.getEventData(form);
+  getEvents(form: NgForm) {
+    this.getEventsForm.emit(form);
   }
 
-  goToEvents() {
-    this.eventsService.viewEvents();
-  }
-
-  goToFavs() {
-    this.eventsService.viewFavorites();
-  }
+  // goToFavs() {
+  //   this.eventsService.viewFavorites();
+  // }
 }

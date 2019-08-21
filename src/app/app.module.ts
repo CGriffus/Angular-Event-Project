@@ -9,6 +9,7 @@ import { BucketlistPageComponent } from "./bucketlist-page/bucketlist-page.compo
 import { EventDetailComponent } from "./event-detail/event-detail.component";
 import { HttpClientModule } from "@angular/common/http";
 import { HomeComponent } from "./home/home.component";
+import { SidebarComponent } from "./home/sidebar/sidebar.component";
 
 const appRoutes: Routes = [
   { path: "home", component: HomeComponent },
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
     EventListComponent,
     BucketlistPageComponent,
     EventDetailComponent,
-    HomeComponent
+    HomeComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
