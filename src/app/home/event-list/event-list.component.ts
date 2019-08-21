@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 // import { EventService } from "";
 
 @Component({
@@ -8,10 +8,15 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class EventListComponent implements OnInit {
   @Input() events;
+  @Output() addToFavoritesEvent = new EventEmitter<any>();
 
   constructor() {}
 
   ngOnInit() {}
+
+  addToFavorites(coolEvent: any) {
+    this.addToFavoritesEvent.emit(coolEvent);
+  }
 
   goToDetails() {
     // this.eventService.goToFavorites();

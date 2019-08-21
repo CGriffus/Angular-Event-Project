@@ -8,6 +8,7 @@ import { Router } from "@angular/router";
 })
 export class EventService {
   eventData: any[] = [];
+  favorites: any[] = [];
   constructor(private http: HttpClient, private router: Router) {}
 
   getEventData(form: any): Observable<any> {
@@ -31,8 +32,16 @@ export class EventService {
     return this.eventData;
   }
 
+  returnFavorites() {
+    return this.favorites;
+  }
   goToFavorites() {
     this.router.navigate(["favorites"]);
+  }
+
+  addToFavorites(coolEvent: any) {
+    this.favorites.push(coolEvent);
+    console.log(this.favorites);
   }
 
   // .subscribe(response => {

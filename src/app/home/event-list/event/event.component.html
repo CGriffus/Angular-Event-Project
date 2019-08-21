@@ -1,5 +1,6 @@
 <div>
   <p>{{ event.name }}</p>
   <button (click)="goToDetails()">Details</button>
-  <i class="far fa-star"></i>
+  <i *ngIf="!favorite" (click)="addToFavorites(event)" class="far fa-star"></i>
+  <i *ngIf="favorite" (click)="addToFavorites(event)" class="fas fa-star"></i>
 </div>

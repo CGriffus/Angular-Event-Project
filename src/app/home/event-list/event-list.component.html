@@ -2,5 +2,9 @@
   <h1>No Results</h1>
 </div>
 <div *ngIf="events">
-  <app-event *ngFor="let event of events" [event]="event"></app-event>
+  <app-event
+    *ngFor="let event of events"
+    [event]="event"
+    (addToFavoritesEvent)="addToFavorites($event)"
+  ></app-event>
 </div>
