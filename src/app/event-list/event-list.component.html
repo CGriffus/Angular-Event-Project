@@ -1,10 +1,12 @@
-<h1>List of Events</h1>
-<div class="event" *ngFor="let event of eventData">
-  <p>{{ event.name }}</p>
-  <button (click)="goToDetails()">Details</button>
-  <div>
-    <i class="far fa-star"></i>
+<div id="eventList">
+  <h1>List of Events</h1>
+  <div class="event" *ngFor="let event of eventData">
+    <p>{{ event.name }}</p>
+    <button (click)="goToDetails()">Details</button>
+    <div>
+      <i class="far fa-star"></i>
+    </div>
   </div>
-</div>
 
-<button (click)="goToHome()">Search Again</button>
+  <button (click)="goToHome()">Search Again</button>
+</div>
