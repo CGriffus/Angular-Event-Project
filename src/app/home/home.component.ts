@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
   getData(form: NgForm): void {
     this.eventService.getEventData(form).subscribe(response => {
       this.eventData = response["_embedded"].events;
-      console.log(this.eventData);
       this.eventService.setData(this.eventData);
     });
   }

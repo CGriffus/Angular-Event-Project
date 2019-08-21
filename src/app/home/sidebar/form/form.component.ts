@@ -15,7 +15,6 @@ export class FormComponent implements OnInit {
 
   getData(form: NgForm) {
     this.getDataFormEvent.emit(form);
-    console.log("working from form");
   }
   goToFavorites() {
     this.goToFavoritesEvent.emit();

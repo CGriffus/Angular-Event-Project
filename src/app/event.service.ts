@@ -24,11 +24,9 @@ export class EventService {
   }
   setData(events: any[]) {
     this.eventData = events;
-    console.log(this.eventData);
   }
 
   returnData() {
-    console.log(this.eventData);
     return this.eventData;
   }
 
@@ -43,13 +41,4 @@ export class EventService {
     this.favorites.push(coolEvent);
     console.log(this.favorites);
   }
-
-  // .subscribe(response => {
-  //   this.eventData = response["_embedded"].events;
-  //   console.log(this.eventData);
-  // });
-
-  // getEvents() {
-  //   return this.eventData;
-  // }
 }

@@ -16,7 +16,6 @@ export class EventComponent implements OnInit {
 
   // coolEvent is reference to event from array
   addToFavorites(coolEvent: any) {
-    console.log(coolEvent);
     this.addToFavoritesEvent.emit(coolEvent);
     this.favorite = true;
   }

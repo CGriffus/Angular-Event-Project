@@ -13,6 +13,5 @@ export class FavoritesComponent implements OnInit {
 
   ngOnInit() {
     this.favorites = this.eventService.returnFavorites();
-    console.log(this.favorites);
   }
 }

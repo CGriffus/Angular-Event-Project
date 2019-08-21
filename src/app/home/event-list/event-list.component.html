@@ -1,7 +1,7 @@
 <div *ngIf="!events">
   <h1>No Results</h1>
 </div>
-<div *ngIf="events">
+<div class="listEvent" *ngIf="events">
   <app-event
     *ngFor="let event of events"
     [event]="event"
