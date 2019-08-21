@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: "app-event",
@@ -7,7 +7,17 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class EventComponent implements OnInit {
   @Input() event;
+  @Output() addToFavoritesEvent = new EventEmitter<any>();
+  favorite: boolean = false;
+
   constructor() {}
 
   ngOnInit() {}
+
+  // coolEvent is reference to event from array
+  addToFavorites(coolEvent: any) {
+    console.log(coolEvent);
+    this.addToFavoritesEvent.emit(coolEvent);
+    this.favorite = true;
+  }
 }

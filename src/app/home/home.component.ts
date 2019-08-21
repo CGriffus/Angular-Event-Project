@@ -23,6 +23,10 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  addToFavorites(coolEvent: any) {
+    this.eventService.addToFavorites(coolEvent);
+  }
+
   goToFavorites() {
     this.eventService.goToFavorites();
   }

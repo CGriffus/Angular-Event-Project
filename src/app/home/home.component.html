@@ -6,6 +6,9 @@
     ></app-sidebar>
   </div>
   <div id="event-list">
-    <app-event-list [events]="eventData"></app-event-list>
+    <app-event-list
+      [events]="eventData"
+      (addToFavoritesEvent)="addToFavorites($event)"
+    ></app-event-list>
   </div>
 </section>
