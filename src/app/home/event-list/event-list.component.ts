@@ -17,8 +17,4 @@ export class EventListComponent implements OnInit {
   addToFavorites(coolEvent: any) {
     this.addToFavoritesEvent.emit(coolEvent);
   }
-
-  goToDetails() {
-    // this.eventService.goToFavorites();
-  }
 }
