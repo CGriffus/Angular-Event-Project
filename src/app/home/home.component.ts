@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { EventsService } from "../services/events.service";
+import { EventService } from "../event.service";
 import { NgForm } from "@angular/forms";
 
 @Component({
@@ -9,14 +9,21 @@ import { NgForm } from "@angular/forms";
 })
 export class HomeComponent implements OnInit {
   eventData: any[];
-  constructor(private eventsService: EventsService) {}
+  constructor(private eventService: EventService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.eventData = this.eventService.returnData();
+  }
 
-  getEvents(form: NgForm): void {
-    this.eventsService.getEventData(form).subscribe(response => {
+  getData(form: NgForm): void {
+    this.eventService.getEventData(form).subscribe(response => {
       this.eventData = response["_embedded"].events;
       console.log(this.eventData);
+      this.eventService.setData(this.eventData);
     });
+  }
+
+  goToFavorites() {
+    this.eventService.goToFavorites();
   }
 }

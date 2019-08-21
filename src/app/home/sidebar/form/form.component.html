@@ -1,0 +1,18 @@
+<form #form="ngForm" (submit)="getData(form)">
+  <label for="keyword">Event</label>
+  <input id="keyword" type="text" name="keyword" placeholder="Tigers" ngModel />
+  <label for="location">City</label>
+  <input
+    id="location"
+    type="text"
+    name="location"
+    placeholder="Detroit"
+    ngModel
+  />
+  <label for="start-date">Start Date</label>
+  <input id="start-date" type="date" name="startDate" ngModel />
+  <label for="end-date">End Date</label>
+  <input id="end-date" type="date" name="endDate" ngModel />
+  <button id="searchBtn">Submit</button>
+</form>
+<button id="favsBtn" (click)="goToFavorites()">Favorites</button>

@@ -1,13 +1,13 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Router } from "@angular/router";
 import { Observable } from "rxjs";
+import { Router } from "@angular/router";
 
 @Injectable({
   providedIn: "root"
 })
-export class EventsService {
-  eventData: any[];
+export class EventService {
+  eventData: any[] = [];
   constructor(private http: HttpClient, private router: Router) {}
 
   getEventData(form: any): Observable<any> {
@@ -21,20 +21,26 @@ export class EventsService {
       }`
     );
   }
+  setData(events: any[]) {
+    this.eventData = events;
+    console.log(this.eventData);
+  }
 
-  getEvents() {
+  returnData() {
+    console.log(this.eventData);
     return this.eventData;
   }
 
-  viewHome() {
-    this.router.navigate(["home"]);
+  goToFavorites() {
+    this.router.navigate(["favorites"]);
   }
 
-  // viewFavorites() {
-  //   this.router.navigate(["bucketList"]);
-  // }
+  // .subscribe(response => {
+  //   this.eventData = response["_embedded"].events;
+  //   console.log(this.eventData);
+  // });
 
-  // viewDetails() {
-  //   this.router.navigate(["eventDetail"]);
+  // getEvents() {
+  //   return this.eventData;
   // }
 }

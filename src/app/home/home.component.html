@@ -1,8 +1,11 @@
-<div class="main-container">
-  <aside>
-    <app-sidebar (getEventsSidebar)="getEvents($event)"></app-sidebar>
-  </aside>
-  <main>
+<section>
+  <div id="sidebar">
+    <app-sidebar
+      (getDataSidebarEvent)="getData($event)"
+      (goToFavoritesEvent)="goToFavorites()"
+    ></app-sidebar>
+  </div>
+  <div id="event-list">
     <app-event-list [events]="eventData"></app-event-list>
-  </main>
-</div>
+  </div>
+</section>
