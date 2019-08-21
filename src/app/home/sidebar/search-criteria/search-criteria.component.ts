@@ -16,8 +16,4 @@ export class SearchCriteriaComponent implements OnInit {
   getEvents(form: NgForm) {
     this.getEventsForm.emit(form);
   }
-
-  // goToFavs() {
-  //   this.eventsService.viewFavorites();
-  // }
 }

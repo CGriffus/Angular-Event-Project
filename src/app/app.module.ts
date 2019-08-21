@@ -14,9 +14,7 @@ import { SidebarComponent } from "./home/sidebar/sidebar.component";
 const appRoutes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "eventDetail", component: EventDetailComponent },
-  { path: "eventList", component: EventListComponent },
   { path: "bucketList", component: BucketlistPageComponent },
-  { path: "search", component: SearchCriteriaComponent },
   { path: "**", redirectTo: "/home", pathMatch: "full" }
 ];
 

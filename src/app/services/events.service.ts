@@ -11,7 +11,6 @@ export class EventsService {
   constructor(private http: HttpClient, private router: Router) {}
 
   getEventData(form: any): Observable<any> {
-    console.log(form.value);
     return this.http.get(
       `https://app.ticketmaster.com/discovery/v2/events?apikey=n0LYhyC6gPm4im2QzA9w62NcjY90NAAG&keyword=${
         form.value.keyword
@@ -27,11 +26,15 @@ export class EventsService {
     return this.eventData;
   }
 
-  viewFavorites() {
-    this.router.navigate(["bucketList"]);
+  viewHome() {
+    this.router.navigate(["home"]);
   }
 
-  viewDetails() {
-    this.router.navigate(["eventDetail"]);
-  }
+  // viewFavorites() {
+  //   this.router.navigate(["bucketList"]);
+  // }
+
+  // viewDetails() {
+  //   this.router.navigate(["eventDetail"]);
+  // }
 }
