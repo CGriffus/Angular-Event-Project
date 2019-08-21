@@ -1,7 +1,11 @@
-<div>
-  <main id="welcome-page">
-    <h1>Welcome!</h1>
-    <p>Find upcoming events</p>
-    <!-- <img src="../../assets/detroit-logo.jpeg" alt="" /> -->
-  </main>
-</div>
+<section>
+  <div id="sidebar">
+    <app-sidebar
+      (getDataSidebarEvent)="getData($event)"
+      (goToFavoritesEvent)="goToFavorites()"
+    ></app-sidebar>
+  </div>
+  <div id="event-list">
+    <app-event-list [events]="eventData"></app-event-list>
+  </div>
+</section>
